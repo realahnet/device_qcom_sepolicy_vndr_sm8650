@@ -89,13 +89,14 @@ neverallow { domain
 - hal_sensors_default
 - hal_camera_default
 - hal_audio_default
+- opluscamera_app
 userdebug_or_eng(` -vendor_usta_app')
 userdebug_or_eng(` -vendor_ustaservice_app')
 userdebug_or_eng(` -vendor_sysmonapp_app_test')
 userdebug_or_eng(` -vendor_snapcam_app')
 }vendor_xdsp_device:chr_file *;
 
-neverallow { domain -init -vendor_init - ueventd } vendor_xdsp_device:chr_file ~{r_file_perms};
+neverallow { domain -init -vendor_init - ueventd -opluscamera_app } vendor_xdsp_device:chr_file ~{r_file_perms};
 
 neverallow { domain
 - init
